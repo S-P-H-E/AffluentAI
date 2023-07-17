@@ -76,7 +76,7 @@ export default function Home() {
           <OfferCard 
             icon={<FaUser size={30}/>}
             heading={'AI Consulting'}
-            body={'We will conduct a detailed analysis of your present processes to find areas where automation can improve profitability.'}
+            body={'In order to satisfy your unique business requirements, our team of professionals will design and create customized automation solutions.'}
           />
           <OfferCard 
             icon={<BsStars size={30}/>}
