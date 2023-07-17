@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Cover from '@/public/cover.png'
-import {BsArrowRightShort} from 'react-icons/bs'
+import Footer from '@/public/footer.png'
+import { BsArrowRightShort, BsStars } from 'react-icons/bs'
+import { FaPenNib, FaUser } from 'react-icons/fa'
 import Tech from "@/components/Tech";
 import Head from "next/head";
+import OfferCard from "@/components/OfferCard";
 
 export default function Home() {
   const email = 'sphe.g.personal@gmail.com';
@@ -38,7 +41,7 @@ export default function Home() {
               <div className="bg-[var(--highlight)] h-[1px] transition-all scale-x-0 group-hover:scale-x-100"/>
             </div>
           </div>
-          <button className="bg-[var(--highlight)] text-[--bgcover] px-3 py-1 rounded-full" onClick={emailBTN}>
+          <button className="bg-[var(--highlight)] text-[--bgcover] px-4 py-1 rounded-full" onClick={emailBTN}>
             Contact Us
           </button>
         </div>
@@ -52,16 +55,48 @@ export default function Home() {
             </button>
           </div> */}
           
-          <div className="text-5xl md:text-9xl font-sans font-bold mt-[50px] md:mt-[100px]">
+          <div className="text-5xl md:text-9xl font-bold mt-[50px] md:mt-[100px]">
             <h1>Unleash the</h1>
             <h1>Power of AI</h1>
           </div>
-          <Image src={Cover} className="relative w-full md:w-[700px] bottom-[30px]"/>
+          <Image src={Cover} className="relative w-full md:w-[730px] bottom-[13px] md:bottom-[23px]"/>
         </div>
       </div>
-      <Tech />
-      <div className="h-screen">
 
+      <Tech />
+
+      <div className="flex flex-col justify-center items-center py-20 md:p-56">
+        <h1 className="text-3xl md:text-6xl font-bold">Our Services</h1>
+        <div className="flex flex-col md:flex-row justify-center items-start p-10 gap-3">
+          <OfferCard 
+            icon={<FaPenNib size={30}/>}
+            heading={'AI Development'}
+            body={'We will conduct a detailed analysis of your present processes to find areas where automation can improve profitability.'}
+          />
+          <OfferCard 
+            icon={<FaUser size={30}/>}
+            heading={'AI Consulting'}
+            body={'We will conduct a detailed analysis of your present processes to find areas where automation can improve profitability.'}
+          />
+          <OfferCard 
+            icon={<BsStars size={30}/>}
+            heading={'Seamless Integration'}
+            body={'We guarantee a seamless integration of our automation solutions into your current workflows, causing the fewest disruptions possible.'}
+          />
+        </div>
+      </div>
+
+      <div className="flex bg-[var(--highlight)] relative h-[265px]">
+        <div className="flex flex-col gap-3 w-full my-16 mx-10 md:ml-20">
+          <h1 className="text-4xl md:text-6xl font-bold text-[var(--bgcover)]">Contact Us</h1>
+          <p className="text-[#505661] md:text-xl">Get in contact with us and book a discovery call.</p>
+          <button className="bg-[var(--bgcover)] text-[var(--highlight)] px-6 py-2 my-2 rounded-full font-medium w-fit" onClick={emailBTN}>
+            Book a Call
+          </button>
+        </div>
+        <div className="w-full hidden md:flex justify-end items-end">
+          <Image src={Footer} className="w-[500px] relative right-[40px] "/>
+        </div>
       </div>
     </>
   )
