@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-[var(--bgcover)] h-[500px] md:h-screen">
+      <div className="bg-[var(--bgcover)] h-[500px] md:h-fit">
         {/* Navbar */}
         <div className="p-6 md:p-10 flex justify-between items-center">
           <h1 className="font-medium text-xl cursor-pointer">AffluentAI</h1>
@@ -44,18 +44,19 @@ export default function Home() {
         </div>
 
         {/* Home */}
-        <div className="flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
           {/* <div className="bottom-0 absolute z-10 p-12 bg-gradient-to-t from-[var(--bgcover)] from-15% to-transparent w-full flex justify-center items-end h-[100px]">
             <button className="bg-[--highlight] text-[var(--bgcover)] font-medium py-3 px-6 rounded-full flex justify-center items-center gap-2">
               Contact Us
               <BsArrowRightShort size={25}/>
             </button>
           </div> */}
-          <Image src={Cover} className="absolute w-full md:w-[1600px] top-[170px] md:top-[270px]"/>
+          
           <div className="text-5xl md:text-9xl font-sans font-bold mt-[50px] md:mt-[100px]">
             <h1>Unleash the</h1>
             <h1>Power of AI</h1>
           </div>
+          <Image src={Cover} className="relative w-full md:w-[700px] bottom-[30px]"/>
         </div>
       </div>
       <Tech />
