@@ -36,7 +36,7 @@ export default function Tech() {
   return (
     <div className='mask'>
      
-    <animated.div className="bg-black py-16 text-[var(--bgcover)] flex justify-between">
+    <animated.div className="bg-[var(--highlight)] py-16 text-[var(--bgcover)] flex justify-between">
       <div className="flex w-[4000px] gap-[300px]" style={{ overflow: 'auto' }} ref={containerRef}>
         <div className="flex justify-center items-center w-fit">
           <SiOpenai className="mx-3" size={30} />
