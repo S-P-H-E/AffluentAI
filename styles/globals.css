@@ -16,7 +16,7 @@ body {
   mask-image: linear-gradient(white 50%, white 50%);
 }
 
-/* Hide the default scrollbar */
+
 ::-webkit-scrollbar {
   display: none;
 }
