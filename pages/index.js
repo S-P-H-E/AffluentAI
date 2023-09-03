@@ -9,16 +9,16 @@ import OfferCard from "@/components/OfferCard";
 import { useRef } from "react";
 
 export default function Home() {
-  const email = 'contactaffluentai@gmail.com';
-
-  const emailBTN = () => {
-      window.location.href = `mailto:${email}`;
-  };
-
   const servicesRef = useRef(null);
 
   const scrollToServices = () => {
     servicesRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const email = 'contactaffluentai@gmail.com';
+
+  const emailBTN = () => {
+      window.location.href = `mailto:${email}`;
   };
 
   return (
@@ -74,7 +74,7 @@ export default function Home() {
 
       <div  className="flex flex-col justify-center items-center py-20 md:p-56">
         <h1 className="text-3xl md:text-6xl font-bold">Our Services</h1>
-        <div ref={servicesRef} className="flex flex-col md:flex-row justify-center items-start p-10 gap-3">
+        <div  className="flex flex-col md:flex-row justify-center items-start p-10 gap-3">
           <OfferCard 
             icon={<FaPenNib size={30}/>}
             heading={'AI Development'}
@@ -93,7 +93,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex bg-[var(--highlight)] relative h-[265px]">
+      <div ref={servicesRef} className="flex bg-[var(--highlight)] relative h-[265px]">
         <div className="flex flex-col justify-center gap-5 w-full my-16 mx-10 md:ml-20">
           <h1 className="text-4xl md:text-6xl font-bold text-[var(--bgcover)]">Contact Us</h1>
           {/* <p className="text-[#505661] md:text-xl">Get in contact with us and book a discovery call.</p> */}
