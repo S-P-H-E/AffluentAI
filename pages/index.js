@@ -1,20 +1,15 @@
 import Image from "next/image";
 import Cover from '@/public/cover.png'
 import Footer from '@/public/footer.png'
-import { BsArrowRightShort, BsStars } from 'react-icons/bs'
+import { BsStars } from 'react-icons/bs'
 import { FaPenNib, FaUser } from 'react-icons/fa'
 import Tech from "@/components/Tech";
 import Head from "next/head";
 import OfferCard from "@/components/OfferCard";
-import { useRef } from "react";
+import { Link, Element } from 'react-scroll';
+import Script from "next/script";
 
 export default function Home() {
-  const servicesRef = useRef(null);
-
-  const scrollToServices = () => {
-    servicesRef.current.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const email = 'contactaffluentai@gmail.com';
 
   const emailBTN = () => {
@@ -33,14 +28,18 @@ export default function Home() {
       <div className="bg-[var(--bgcover)] h-[500px] md:h-fit">
         {/* Navbar */}
         <div className="p-6 md:p-10 flex justify-between items-center">
-          <h1 className="font-medium text-xl cursor-pointer">Affluent AI</h1>
+          <h1 className="font-medium text-xl cursor-pointer">Affluent AI</h1> 
           <div className="md:flex gap-10 hidden">
             <div className="flex flex-col group">
               <button className="font-medium">About Us</button>
               <div className="bg-[var(--highlight)] h-[1px] transition-all scale-x-0 group-hover:scale-x-100"/>
             </div>
+            
+
             <div className="flex flex-col group">
-              <button className="font-medium" onClick={scrollToServices}>Our Services</button>
+              <Link to="servicesRef" spy={true} smooth={true} duration={500} className="font-medium cursor-pointer">
+                Our Services
+              </Link>
               <div className="bg-[var(--highlight)] h-[1px] transition-all scale-x-0 group-hover:scale-x-100"/>
             </div>
             <div className="flex flex-col group">
@@ -72,7 +71,7 @@ export default function Home() {
 
       <Tech />
 
-      <div  className="flex flex-col justify-center items-center py-20 md:p-56">
+      <Element name='services' className="flex flex-col justify-center items-center py-20 md:p-56">
         <h1 className="text-3xl md:text-6xl font-bold">Our Services</h1>
         <div  className="flex flex-col md:flex-row justify-center items-start p-10 gap-3">
           <OfferCard 
@@ -91,9 +90,26 @@ export default function Home() {
             body={'We guarantee a seamless integration of our automation solutions into your current workflows, causing the fewest disruptions possible.'}
           />
         </div>
+      </Element>
+
+      {/* <div suppressHydrationWarning className="calendly-inline-widget" data-url="https://calendly.com/papadopouloschristofis/ai-automation-call" style={{ minWidth: '320px', height: '700px' }}></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>  */}
+
+      <div className="w-full h-fit flex flex-col justify-center items-center">
+        <h1 className="text-3xl md:text-6xl font-bold">Recent Client</h1>
+        <div style={{ padding: "30% 0 0 0", position: "relative" }} className="w-full md:w-[700px] my-10">
+          <iframe 
+            src="https://player.vimeo.com/video/867728375?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }} 
+            title="Ryan - Prime Trading Testimonial">
+          </iframe>
+        </div>
+        <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
       </div>
 
-      <div ref={servicesRef} className="flex bg-[var(--highlight)] relative h-[265px]">
+      <Element name="contact" className="flex bg-[var(--highlight)] relative h-[265px]"> 
         <div className="flex flex-col justify-center gap-5 w-full my-16 mx-10 md:ml-20">
           <h1 className="text-4xl md:text-6xl font-bold text-[var(--bgcover)]">Contact Us</h1>
           {/* <p className="text-[#505661] md:text-xl">Get in contact with us and book a discovery call.</p> */}
@@ -104,7 +120,9 @@ export default function Home() {
         <div className="w-full hidden md:flex justify-end items-end">
           <Image src={Footer} className="w-[500px] relative right-[40px] "/>
         </div>
-      </div>
+      </Element>
+
+
     </>
   )
 }
