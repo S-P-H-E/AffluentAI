@@ -25,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-[var(--bgcover)] h-[500px] md:h-fit">
+      <div className="bg-[var(--bgcover)] h-[650px] md:h-[1000px]">
         {/* Navbar */}
         <div className="p-6 md:p-10 flex justify-between items-center">
           <h1 className="font-medium text-xl cursor-pointer">Affluent AI</h1> 
@@ -61,11 +61,15 @@ export default function Home() {
             </button>
           </div> */}
           
-          <div className="text-5xl md:text-9xl font-bold mt-[50px] md:mt-[100px]">
+          <div className="text-5xl md:text-9xl font-bold mt-[50px] md:mt-[100px] ">
             <h1>Unleash the</h1>
             <h1>Power of AI</h1>
           </div>
-          <Image src={Cover} className="relative w-full md:w-[730px] bottom-[13px] md:bottom-[23px]"/>
+          {/* <Image src={Cover} className="relative w-full md:w-[730px] bottom-[13px] md:bottom-[23px]"/> */}
+          <div className="w-fit h-[500px] relative bottom-[40px] md:bottom-[200px]">
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.473/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/c-ys25p8m4Mbr9Gz/scene.splinecode"></spline-viewer>
+          </div>
         </div>
       </div>
 
