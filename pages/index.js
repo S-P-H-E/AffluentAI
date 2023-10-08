@@ -65,7 +65,7 @@ export default function Home() {
             <h1>Unleash the</h1>
             <h1>Power of AI</h1>
           </div>
-          {/* <Image src={Cover} className="relative w-full md:w-[730px] bottom-[13px] md:bottom-[23px]"/> */}
+          {/* <Image src={Cover} alt="image" className="relative w-full md:w-[730px] bottom-[13px] md:bottom-[23px]"/> */}
           <div className="w-fit h-[500px] relative bottom-[40px] md:bottom-[200px]">
             <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.473/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/c-ys25p8m4Mbr9Gz/scene.splinecode"></spline-viewer>
