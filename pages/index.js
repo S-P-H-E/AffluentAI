@@ -125,8 +125,6 @@ export default function Home() {
           <Image src={Footer} alt="image" className="w-[500px] relative right-[40px] "/>
         </div>
       </Element>
-
-
     </>
   )
 }
