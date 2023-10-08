@@ -122,7 +122,7 @@ export default function Home() {
           </button>
         </div>
         <div className="w-full hidden md:flex justify-end items-end">
-          <Image src={Footer} className="w-[500px] relative right-[40px] "/>
+          <Image src={Footer} alt="image" className="w-[500px] relative right-[40px] "/>
         </div>
       </Element>
 
